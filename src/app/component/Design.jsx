@@ -21,9 +21,10 @@ const Design = () => {
         transition={{ duration: 0.6 }}
       >
         <video
-          className="rounded-lg shadow-lg w-full max-w-xs sm:max-w-md md:max-w-lg h-auto"
+          className="rounded-lg shadow-lg w-full max-w-xs sm:max-w-md md:max-w-2xl h-auto"
           controls
           autoPlay
+          loop
           muted
         >
           <source src="/v1.mp4" type="video/mp4" />
@@ -33,28 +34,24 @@ const Design = () => {
 
       {/* Text Section */}
       <motion.div
-        className="flex flex-col justify-center px-4 sm:px-10 py-10 text-center sm:text-left"
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
+        className="flex flex-col md:ml-56 text-start px-4 sm:px-10 py-10 max-w-4xl mx-auto"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
       >
-        <div className="sm:w-1/3">
-          <h3 className="text-orange-500 text-lg sm:text-xl font-semibold">
-            What is SAMMY though, really?
-          </h3>
-          <h2 className="text-gray-900 text-2xl sm:text-3xl font-bold mt-3">
-            The Future of PLG
-          </h2>
-        </div>
-        <div className="sm:w-2/3 text-black text-base sm:text-lg mt-3">
-          <p>
-            SAMMY is an AI that explores your app like a real user, mapping every
-            possible click to generate content, onboard users, and spot issues.
-            It updates automatically with every product change, keeping
-            everything running smoothly. It may feel like magic, but it’s just
-            powerful technology at work.
-          </p>
-        </div>
+        <h3 className="text-orange-500 text-lg sm:text-xl font-semibold">
+          What is SAMMY though, really?
+        </h3>
+        <h2 className="text-gray-900 text-2xl sm:text-3xl font-bold mt-2">
+          The Future of PLG
+        </h2>
+        <p className="text-black text-base sm:text-lg mt-3 max-w-2xl">
+          SAMMY is an AI that explores your app like a real user, mapping every
+          possible click to generate content, onboard users, and spot issues.
+          It updates automatically with every product change, keeping
+          everything running smoothly. It may feel like magic, but it’s just
+          powerful technology at work.
+        </p>
       </motion.div>
 
       {/* Features Section */}

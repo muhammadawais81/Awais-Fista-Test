@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import dollar from "@/app/img/Dollar.png"
 
 const Card = () => {
   return (
@@ -12,7 +13,7 @@ const Card = () => {
       transition={{ duration: 0.6 }}
     >
         <div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
-       
+             
       </div>
       {/* Left Content */}
       <div className="md:w-1/2 space-y-4">
