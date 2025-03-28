@@ -1,22 +1,24 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import dollar from "@/app/img/Dollar.png"
+import duck from "@/app/img/duck.avif";
 
 const Card = () => {
   return (
     <motion.div
-      className="bg-white border border-orange-400 rounded-2xl p-18 flex flex-col md:flex-row items-center shadow-lg w-full max-w-5xl mx-auto"
+      className="relative bg-white border border-orange-400 rounded-2xl p-12 shadow-lg w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center overflow-hidden"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
     >
-        <div className="md:w-1/2 flex justify-center mt-6 md:mt-0">
-             
-      </div>
+      {/* Background Image */}
+      <div
+        className="absolute inset-y-0 right-0 w-[400px] mr-2 bg-cover opacity-20  md:opacity-90"
+        style={{ backgroundImage: `url(${duck.src})` }}
+      ></div>
+
       {/* Left Content */}
-      <div className="md:w-1/2 space-y-4">
+      <div className="md:w-1/2 space-y-4 relative z-10 p-6">
         <h2 className="text-3xl font-semibold text-orange-600 flex items-center">
           Pricing
           <button className="ml-3 bg-orange-600 text-white px-5 py-2 rounded-lg text-sm hover:bg-orange-700 transition-all">
@@ -32,9 +34,6 @@ const Card = () => {
         </p>
         <p className="text-orange-600 font-semibold text-lg">No BS. That's the SAMMY way.</p>
       </div>
-
-      {/* Right Image */}
-    
     </motion.div>
   );
 };

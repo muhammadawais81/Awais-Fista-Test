@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import box from "@/app/img/box1.avif";
+import box from "@/app/img/box1.avif"; // Ensure this is the correct path to your uploaded image
+import Image from "next/image";
 
 const Automate = () => {
   const features = [
@@ -11,7 +12,6 @@ const Automate = () => {
       bgColor: "bg-orange-600 text-white",
       initialHeight: "h-48",
       hoverHeight: "h-64",
-      background: "", // No background image
     },
     {
       title: "All-in-One",
@@ -19,7 +19,6 @@ const Automate = () => {
       bgColor: "bg-orange-100 text-gray-900",
       initialHeight: "h-52",
       hoverHeight: "h-72",
-      background: `url(${box})`, // Apply background image
     },
     {
       title: "Global Reach",
@@ -27,7 +26,6 @@ const Automate = () => {
       bgColor: "bg-orange-600 text-white",
       initialHeight: "h-56",
       hoverHeight: "h-80",
-      background: `url(${box})`, // Apply background image
     },
     {
       title: "Proven Results",
@@ -35,12 +33,11 @@ const Automate = () => {
       bgColor: "bg-orange-100 text-gray-900",
       initialHeight: "h-60",
       hoverHeight: "h-96",
-      background: "", // No background image
     },
   ];
 
   return (
-    <div className="container mx-auto px-6 py-12">
+    <div className="container mx-auto px-6 py-12 bg-white">
       {/* Steps Section */}
       <motion.div
         className="max-w-3xl mx-auto text-center"
@@ -70,25 +67,47 @@ const Automate = () => {
         {features.map((item, index) => (
           <motion.div
             key={index}
-            className={`${item.bgColor} p-8 rounded-2xl shadow-lg cursor-pointer relative overflow-hidden transition-all duration-300 ${item.initialHeight}`}
-            initial={{ opacity: 0, y: 30 }}
+            className={`${item.bgColor} p-8 rounded-2xl shadow-lg cursor-pointer relative overflow-hidden transition-all duration-300 group`}
+            initial={{ height: "12rem", opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
             whileHover={{
-              height: item.hoverHeight.replace("h-", "") + "px",
+              height: "18rem",
               boxShadow: "0px 15px 25px rgba(0,0,0,0.2)",
-            }}
-            style={{
-              backgroundImage: item.background,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
             }}
           >
             <h3 className="text-2xl font-extrabold">{item.title}</h3>
             <p className="mt-3 text-md">{item.text}</p>
 
+            {/* Image moves when hovering any part of the card */}
+            <motion.div
+              className="absolute bottom-4 right-4"
+              initial={{ opacity: 0, bottom: "1rem", right: "1rem", width: "4rem", height: "4rem" }}
+              animate={{ opacity: 1 }}
+              whileHover={{
+                opacity: 1,
+                bottom: "1.5rem",
+                left: "50%",
+                transform: "translateX(-50%)",
+                width: "6rem",
+                height: "6rem",
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              <Image
+                src={box}
+                alt="Decorative box"
+                className="transition-all duration-500 group-hover:scale-125"
+              />
+            </motion.div>
+
             {/* Decorative Bottom Line */}
-            <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-800 rounded-b-2xl"></div>
+            <motion.div
+              className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-400 to-orange-800 rounded-b-2xl"
+              initial={{ opacity: 0 }}
+              whileHover={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            ></motion.div>
           </motion.div>
         ))}
       </div>

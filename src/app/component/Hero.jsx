@@ -5,8 +5,8 @@ function Hero() {
   return (
     <div>
       <section
-        style={{ backgroundImage: "url('/bg1.avif')" }}
-        className="flex flex-col items-center text-center py-20 px-6 mt-8 "
+        style={{ backgroundImage: "url('/bg1.png') " }}
+        className="flex flex-col items-center text-center bg-center py-20 px-6 mt-8 "
       >
         <div className="max-w-3xl w-full px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl text-start font-semibold text-orange-600 leading-tight">
