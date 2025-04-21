@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/app/img/logo.png"
+import logo from "@/app/img/logo2.png"
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
      className="flex flex-col items-center justify-center py-10 bg-orange-50">
       {/* Logo & Brand Name */}
       <div className="flex items-center space-x-2 mb-6">
-        <Image src={logo} alt="Logo" width={40} height={40} />
+        <Image src={logo} alt="Logo" width={70} height={70} />
         <span className="text-xl font-semibold text-orange-600">SAMMY Labs</span>
       </div>
 
