@@ -116,7 +116,7 @@ const Design = () => {
                     >
                       <div className="bg-white p-4 rounded-lg ">
                         {feature.expandedContent.split('\n\n').map((paragraph, i) => (
-                          <p key={i} className="text-[#ff4000]  text-xs mb-2">
+                          <div key={i} className="text-[#ff4000]  text-xs mb-2">
                             <ul>
                               <li>
 
@@ -124,7 +124,7 @@ const Design = () => {
                               </li>
                             </ul>
 
-                          </p>
+                          </div>
 
                         ))}
                         <video

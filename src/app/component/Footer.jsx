@@ -16,7 +16,7 @@ const Footer = () => {
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex flex-col space-y-4 text-center text-orange-600 font-medium">
+      <nav className="flex flex-col space-y-2 text-center text-orange-600 font-medium">
         <Link href="/features" className="hover:underline">
           Features
         </Link>

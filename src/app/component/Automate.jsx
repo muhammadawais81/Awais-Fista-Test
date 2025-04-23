@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import box1 from "@/app/img/1bx1.avif";
+import box1M from "@/app/img/1box1M.avif";
 import box2 from "@/app/img/box1.avif";
 import box3 from "@/app/img/1bx3.avif";
 import b0x4 from "@/app/img/1bx4.avif";
@@ -24,10 +25,10 @@ const Automate = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-6 py-16 bg-white">
+    <div className=" px-6 py-16 bg-white">
       {/* Steps Section - Without animations */}
-      <div className="ml-7 text-start items-start px-4 py-12">
-        <h2 className="text-3xl text-start items-start  font-bold text-gray-900  mb-8">
+      <div className="ml-3 md:ml-8 -mt-8 text-start items-start px-4 py-12">
+        <h2 className="text-2xl text-start items-start font-semibold   text-gray-900  mb-6">
           3 Steps to Automation
         </h2>
 
@@ -52,10 +53,10 @@ const Automate = () => {
         </div>
       </div>
       {/* Feature Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-8 mt-12 m-4 md:m-11 relative">
+      <div className="grid grid-cols-1 md:mx-10   md:grid-cols-2 gap-8 md:gap-8 mt-7   relative">
         {/* Box 1 - Secure */}
         <motion.div
-          className="bg-[#ff4000] text-white p-8 rounded-2xl shadow-lg relative overflow-hidden flex flex-col mb-4 md:mb-6"
+          className="bg-[#ff4000] text-white p-8 w-full rounded-2xl shadow-lg relative overflow-hidden flex flex-col mb-4 md:mb-6"
           initial={{ height: isMobile ? 500 : 400, x: isMobile ? -100 : 0 }}
           animate={{
             height: hoveredBox === 1 ? (isMobile ? 550 : 500) : (isMobile ? 500 : 400),
@@ -68,7 +69,7 @@ const Automate = () => {
           <div>
             <h3 className="text-3xl font-extrabold mb-4">Secure</h3>
             <p className="text-[16px] mb-4">
-              SOC 2, GDPR, and HIPAA compliant for total peace of mind. Data is encrypted at every stage, keeping your product and user info safe.
+              SOC 2, GDPR, and HIPAA compliant for total peace of mind. Data is encrypted at every stage, keeping your product and user info safe. <br />
               Strict access controls ensure only authorized teams can view or edit results
             </p>
           </div>
@@ -82,7 +83,7 @@ const Automate = () => {
             transition={{ duration: 0.3 }}
           >
             <Image
-              src={box1}
+              src={isMobile ? box1M : box1}
               alt="Secure illustration"
               className="object-contain"
               fill

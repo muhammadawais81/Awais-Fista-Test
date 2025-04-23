@@ -8,16 +8,16 @@ function Hero() {
         style={{ backgroundImage: "url('/bg1.png') " }}
         className="flex flex-col items-center text-center bg-center py-20 px-6 mt-8  "
       >
-        <div className="max-w-3xl w-full px-4 sm:px-6 lg:px-8">
+        <div className="max-w-3xl w-full px-1 sm:px-6 lg:px-8">
 
 
           <h1 className="
-    font-sans font-black 
-    text-4xl sm:text-4xl md:text-6xl 
+     font-black 
+    text-[34px] sm:text-4xl md:text-6xl 
     leading-[1.2] 
     text-[#ff4000] 
     text-start
-    tracking-tight
+    
     mt-12
   ">
             SAMMY: The AI <br />
@@ -39,10 +39,10 @@ function Hero() {
           </p>
 
           <div className="mt-6 flex flex-col sm:flex-row gap-4 items-start sm:items-start justify-center sm:justify-start">
-            <button className="bg-[#ff4000] text-white font-thin  px-10 sm:px-14 py-2 sm:py-[14px] rounded-lg shadow-md hover:bg-white hover:text-[#ff4000] border-2 border-[#ff4000] transition">
+            <button className="bg-[#ff4000] text-white   px-10 sm:px-14 py-2 sm:py-[14px] rounded-lg shadow-md hover:bg-white hover:text-[#ff4000] border-2 border-[#ff4000] transition">
               Speak to a human
             </button>
-            <button className="border-2 border-[#ff4000] text-[#ff4000] font-thin px-8 sm:px-12 py-2 sm:py-[14px] rounded-lg hover:text-white hover:bg-[#ff4000] transition">
+            <button className="border-2 border-[#ff4000] text-[#ff4000]  px-8 sm:px-12 py-2 sm:py-[14px] rounded-lg hover:text-white hover:bg-[#ff4000] transition">
               See the Magic
             </button>
           </div>
